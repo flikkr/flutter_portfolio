@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:portfolio/models/storyline.dart';
 import 'package:portfolio/models/storyline_event.dart';
 
-var currentEventIndexProvider = StateProvider<int>((_) => 0);
-var storylineEventProvider = StateProvider<StorylineEvent>((ref) {
-  int index = ref.watch(currentEventIndexProvider).state;
-  return Storyline.events[index];
-});
+// var currentEventIndexProvider = StateProvider<int>((_) => 0);
+// var storylineEventProvider = StateProvider<StorylineEvent>((ref) {
+//   int index = ref.watch(currentEventIndexProvider).state;
+//   return Storyline.events[index];
+// });
 
 class MapPage extends StatefulWidget {
   @override

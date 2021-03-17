@@ -11,8 +11,8 @@ dependencies:
     sdk: flutter
 
   # state management
-  hooks_riverpod: ^0.12.2
-  flutter_hooks: ^0.15.0
+  # hooks_riverpod: ^0.12.2
+  # flutter_hooks: ^0.15.0
 
   # maps
   google_maps_flutter: ^2.0.1
