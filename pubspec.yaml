@@ -1,14 +1,18 @@
 name: portfolio
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 0.0.1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
+  # state management
+  # hooks_riverpod: ^0.12.2
+  # flutter_hooks: ^0.15.0
 
   # maps
   google_maps_flutter: ^2.0.1
@@ -16,9 +20,13 @@ dependencies:
 
   # ui
   timelines: ^0.0.2+1
+  lottie: ^0.7.0+1
 
   # platform
   cupertino_icons: ^1.0.2
+
+  # assets
+  google_fonts: ^1.1.1
 
 dev_dependencies:
   flutter_test:
