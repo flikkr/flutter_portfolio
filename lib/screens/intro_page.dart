@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/util/route_generator.dart';
 
 class IntroPage extends StatelessWidget {
   @override
@@ -35,11 +36,32 @@ class IntroPage extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Text(
-                '''Welcome to my online portfolio. \nBefore we get started, do you want to learn more about me?
-                I have a little interactive story ready for you, or if you
-                just want to see my skills, you can skip to that too.''',
+                'Welcome to my online portfolio. \nBefore we get started, do you want to learn more about me?\nI have a little interactive story ready for you, or if \nyou just want to see my skills, you can skip to that too.',
                 style: Theme.of(context).textTheme.headline6,
                 textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 150,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Skip to CV'),
+                    ),
+                  ),
+                  SizedBox(width: 70),
+                  SizedBox(
+                    width: 150,
+                    child: ElevatedButton(
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed(Routes.map),
+                      child: Text("Let's hear your story!"),
+                    ),
+                  ),
+                  SizedBox(height: 100),
+                ],
               ),
             ],
           ),
