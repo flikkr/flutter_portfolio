@@ -1,0 +1,43 @@
+name: Push and build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1.4.0
+        with:
+          flutter-version: 2.0.2
+          
+      - name: Install dependencies
+      - run: flutter pub get
+      
+      - name: Run tests
+      - run: flutter clean
+      - run: flutter test
+      
+      - name: Build for web
+      - run: flutter build web
+      
+  gen_page:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push my GitHub page repo
+        uses: cpina/github-action-push-to-another-repository@master
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: 'build/web'
+          destination-github-username: 'flikkr'
+          destination-repository-name: 'flikkr.github.io'
+          user-email: kazymir.rabier@gmail.com
+            
+            
+            
+            
+            
