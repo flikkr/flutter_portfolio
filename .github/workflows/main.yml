@@ -34,7 +34,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: 'build/web'
+          source-directory: '/build/web'
           destination-github-username: 'flikkr'
           destination-repository-name: 'flikkr.github.io'
           user-email: kazymir.rabier@gmail.com
