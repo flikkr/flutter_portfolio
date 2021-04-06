@@ -9,19 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - uses: subosito/flutter-action@v1.4.0
         with:
           flutter-version: 2.0.2
           
       - name: Install dependencies
-      - run: flutter pub get
+        run: flutter pub get
       
       - name: Run tests
-      - run: flutter clean
-      - run: flutter test
+        run: |
+          flutter clean
+          flutter test
       
       - name: Build for web
-      - run: flutter build web
+        run: flutter build web
       
   gen_page:
     needs: build
